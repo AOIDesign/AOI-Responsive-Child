@@ -1,1 +1,1 @@
-This is the AOI Responsive Child Theme 2
+This is the AOI Responsive Child Theme
