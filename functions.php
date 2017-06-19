@@ -10,5 +10,5 @@ function my_theme_enqueue_styles() {
         wp_get_theme()->get('Version')
     );
 }
-add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );function exclude_category( $query ) {if ( $query->is_home() && $query->is_main_query() ) {$query->set( 'cat', '' );}}add_action( 'pre_get_posts', 'exclude_category' );//Hide categories from WordPress category widgetfunction exclude_widget_categories($args){    $exclude = "";    $args["exclude"] = $exclude;    return $args;}add_filter("widget_categories_args","exclude_widget_categories");
 ?>
