@@ -9,8 +9,8 @@
  * @package AOI_Responsive
  */
 	get_header(); ?>
-	
-// Do not remove the text within the hidden tag below.
+
+<!-- Do not remove the text within the hidden tag below. -->
 	<div class="hidden">
 	  	<span class="vcard p-author author author_name"><span class="fn"><?php the_author(); ?></span></span>
 	  	<span class="post-date updated"><?php the_date(); ?></span>
