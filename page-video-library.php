@@ -42,13 +42,10 @@
 						<?php $video_query = new WP_Query('cat='.$videoCategories.'&posts_per_page=6&paged=' . $paged ); ?>
                         <?php if ($video_query->have_posts()) : ?>
                         <?php while ($video_query->have_posts()) : $video_query->the_post(); ?>
-
-                        <?php $video_thumbnail = get_the_post_thumbnail($video_query->ID, 'large', array ('alt' =>  get_the_title())); ?>
-
-                          <a class="video-thumb" href="<?php the_permalink() ?>" rel="bookmark" title="Link to watch the video, <?php the_title_attribute(); ?>">
-                            <?php echo '<div>'.$video_thumbnail.'</div>'; ?><span class="video-title"><?php the_title_attribute(); ?></span>
-                            </a>
-                        <?php endwhile; ?>
+                            <a class="video-thumb" href="<?php the_permalink() ?>" rel="bookmark" title="Link to watch the video, <?php the_title_attribute(); ?>">
+                              <div><img src="<?php video_thumbnail(); ?>" alt="<?php the_title_attribute(); ?>" /></div><span class="video-title"><?php the_title_attribute(); ?></span>
+                              </a>
+                          <?php endwhile; ?>
                         <div class="clear"></div>
                         <div id="nav-below" class="navigation">
                             <div class="nav-previous"><?php next_posts_link( 'Previous', $video_query->max_num_pages ); ?></div>
